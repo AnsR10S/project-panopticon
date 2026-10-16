@@ -1,0 +1,21 @@
+schema_version: 1
+study_id: competitive-control-v1
+run_kind: smoke
+arm: silent
+rounds: 12
+memory_window: 6
+analysis_last_rounds: 6
+agent:
+  backend: scripted
+  model: scripted
+  scripted_policy: competitive
+auditor:
+  enabled: true
+  window: 3
+  elevation_threshold: 0.25
+  maximum_spread: 2
+feedback:
+  warning_source: live
+  schedule_rounds: [3, 6, 9]
+budget:
+  max_calls: 72
