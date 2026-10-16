@@ -1,0 +1,12 @@
+﻿# Initial Setup Checklist
+- [x] Python package structure
+- [x] CollusionLab submodule vendor
+- [ ] Research protocol definition
+- [ ] Market game adapters
+- [ ] CLI runner implementation
+- [ ] Auditor observation feedback routing
+- [ ] Metric logging and evidence tracking
+- [ ] Paired permutation inference test
+- [ ] Calvano Bertrand-Edgeworth demand curve
+- [ ] Local Ollama runtime qualification
+- [ ] Structured request logging

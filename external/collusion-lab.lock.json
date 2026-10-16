@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "repository": "https://github.com/tailaiying32/collusion_lab.git",
+  "commit": "943d39977a7135b7af85d29fc9f7be09eba1870d",
+  "checkout_path": "external/collusion-lab",
+  "python_import_path": "external/collusion-lab/src",
+  "license": "MIT",
+  "license_file": "external/collusion-lab/LICENSE",
+  "bundle_path": "external/collusion-lab.bundle",
+  "bundle_sha256": "b07dd8309c9116d37fa0db35c0be28d904368aaa5c39680fb79b70331893cc4d",
+  "reviewed_on": "2026-10-16",
+  "integration_status": "vendored_snapshot_bundle",
+  "note": "Exact pinned upstream snapshot preserved as an offline Git bundle. Restored locally via scripts/bootstrap_upstream.ps1 without requiring upstream repository availability. Verify this exact SHA and a clean working tree before study execution."
+}

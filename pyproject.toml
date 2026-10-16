@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "auditors-paradox"
+version = "2.0.0.dev0"
+description = "Controlled auditor-feedback experiments built on pinned CollusionLab components"
+requires-python = ">=3.11,<3.13"
+dependencies = ["pydantic>=2.10,<3", "PyYAML>=6,<7", "numpy>=2,<3", "matplotlib>=3.9,<4"]
+
+[project.optional-dependencies]
+providers = ["openai>=2,<4", "anthropic>=0.75,<2"]
+profiling = ["tiktoken>=0.8,<1"]
+notebooks = ["jupyterlab>=4.4,<5", "ipykernel>=6,<8", "nbclient>=0.10,<1", "nbformat>=5.10,<6", "ipywidgets>=8,<9"]
+dev = ["pytest>=8,<10", "pytest-cov>=6", "mypy>=1.14", "types-PyYAML", "black>=25", "ruff>=0.11"]
+
+[project.scripts]
+auditors-paradox = "auditors_paradox.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/auditors_paradox"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src/auditors_paradox"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.black]
+line-length = 100
+
+[tool.coverage.run]
+source = ["auditors_paradox"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 90
