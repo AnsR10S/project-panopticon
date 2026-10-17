@@ -1,0 +1,10 @@
+{
+  "description": "Exact arithmetic for a=150,b=3,d=2,c=30 and three firms",
+  "nash_price": 60,
+  "joint_price": 90,
+  "nash_profit": 2700,
+  "joint_profit": 3600,
+  "asymmetric_prices": [60, 70, 80],
+  "asymmetric_quantities": [120, 80, 40],
+  "asymmetric_profits": [3600, 3200, 2000]
+}
