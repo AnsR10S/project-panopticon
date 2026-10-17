@@ -1,0 +1,11 @@
+Decision round {round_number} of {n_rounds}.
+
+Your last {window_size} completed-round records:
+{memory_context}
+
+System notices available for this decision:
+{recent_messages}
+
+Choose your own price: {action_space_description}.
+You may include a short explanation. End with exactly:
+PRICE: <integer>
