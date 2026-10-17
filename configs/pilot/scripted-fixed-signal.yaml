@@ -1,0 +1,14 @@
+schema_version: 1
+study_id: fixed-signal-engineering-v1
+run_kind: smoke
+rounds: 12
+analysis_last_rounds: 6
+agent:
+  backend: scripted
+  model: scripted
+  scripted_policy: coordinated
+feedback:
+  warning_source: fixed
+  schedule_rounds: [3, 6, 9]
+budget:
+  max_calls: 72

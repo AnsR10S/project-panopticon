@@ -1,0 +1,26 @@
+schema_version: 1
+study_id: local-feasibility-v11
+run_kind: pilot
+rounds: 100
+memory_window: 20
+analysis_last_rounds: 20
+disclose_horizon: false
+primary_outcome: gross_profit
+batch_arms: [silent, private, public, placebo, public_numeric, public_fine, private_fine]
+agent:
+  backend: ollama
+  base_url: http://127.0.0.1:11434/v1
+  model: qwen3:4b
+  max_output_tokens: 512
+  max_action_attempts: 2
+  timeout_seconds: 180
+auditor:
+  mode: market
+  window: 5
+  cooldown_rounds: 5
+  elevation_threshold: 0.25
+  maximum_spread: 2
+feedback:
+  schedule_rounds: [10, 30, 50, 70, 90]
+budget:
+  max_calls: 600

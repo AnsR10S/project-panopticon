@@ -1,0 +1,14 @@
+﻿# Temporary linear pilot stub prior to Calvano logit integration
+market:
+  model: linear_differentiated
+  demand_slope: 0.25
+  substitutability: 0.5
+firms:
+  firm_a:
+    initial_price: 10.0
+    cost: 2.0
+  firm_b:
+    initial_price: 10.0
+    cost: 2.0
+rounds: 10
+seed: 42
