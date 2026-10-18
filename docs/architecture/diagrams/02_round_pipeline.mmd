@@ -1,0 +1,16 @@
+flowchart TB
+  FREEZE["1. Freeze all three observations<br/>using completed history through t-1"]
+  DECIDE["2. Record calls and collect prices<br/>no current-round rival disclosure"]
+  STEP["3. Step the market once<br/>gross rewards = net rewards"]
+  AUDIT["4. Audit the completed round<br/>update the consecutive-round window"]
+  ROUTE["5. Compose and route notices<br/>record each recipient's disposition"]
+  COMMIT["6. Save evidence and round commit<br/>retain failures and interruptions"]
+  NEXT["7. Decision t+1 consumes<br/>only its authorized pending notice"]
+  FINAL["After the final round: verify<br/>and seal complete evidence"]
+  FREEZE --> DECIDE
+  DECIDE --> STEP
+  STEP --> AUDIT
+  AUDIT --> ROUTE
+  ROUTE --> COMMIT
+  COMMIT --> NEXT
+  NEXT --> FINAL

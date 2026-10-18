@@ -1,0 +1,25 @@
+flowchart TB
+  CONFIG["Protocol, config, prompts<br/>and exact source pin"]
+  RUN["Study-owned runner<br/>explicit round sequence"]
+  AGENTS["Three independent agents<br/>frozen authorized observations"]
+  MARKET["CollusionLab market engine<br/>prices, demand, gross profits"]
+  AUDIT["Deterministic auditor<br/>no reward modification"]
+  ROUTE["Composer and feedback router<br/>private/public/silent/placebo"]
+  INBOX["Per-agent notice inbox<br/>first eligible next decision"]
+  CALLS["Visible request/response records<br/>usage, attempts, failures"]
+  STORE["Append-only events + commits<br/>source snapshot and checksums"]
+  SCHEDULE["Independent fixed schedule<br/>not a live detection signal"]
+  ANALYSIS["Offline integrity and analysis<br/>run-level effects, uncertainty"]
+  CONFIG --> RUN
+  RUN --> AGENTS
+  AGENTS --> MARKET
+  MARKET --> AUDIT
+  AUDIT --> ROUTE
+  ROUTE --> INBOX
+  AGENTS --> CALLS
+  CALLS --> STORE
+  MARKET --> STORE
+  STORE --> ANALYSIS
+  SCHEDULE --> ROUTE
+  AUDIT --> STORE
+  ROUTE --> STORE

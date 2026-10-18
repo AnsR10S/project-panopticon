@@ -1,0 +1,16 @@
+flowchart TB
+  P1["P1 Foundation and preservation<br/>BR-001, BR-012"]
+  P2["P2 Economics and agent integration<br/>BR-002, BR-006"]
+  P3["P3 Auditor and feedback controls<br/>BR-003 to BR-005"]
+  P4["P4 Evidence, failures, budgets<br/>BR-007 to BR-009"]
+  P5["P5 Batches and run-level inference<br/>BR-010, BR-011"]
+  P6["P6 Release and reproducible handoff<br/>BR-012, BR-013"]
+  PILOT["Research: model pilot + freeze<br/>provider/budget/power still to choose"]
+  RESEARCH["Research: confirmatory experiments<br/>actual results and competition paper"]
+  P1 --> P2
+  P2 --> P3
+  P3 --> P4
+  P4 --> P5
+  P5 --> P6
+  P6 --> PILOT
+  PILOT --> RESEARCH

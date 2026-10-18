@@ -1,0 +1,359 @@
+{
+  "01_system": {
+    "title": "Auditor's Paradox V1 - Component responsibilities",
+    "size": [
+      13,
+      10
+    ],
+    "nodes": [
+      {
+        "id": "CONFIG",
+        "label": "Protocol, config, prompts\nand exact source pin",
+        "at": [
+          0,
+          6
+        ]
+      },
+      {
+        "id": "RUN",
+        "label": "Study-owned runner\nexplicit round sequence",
+        "at": [
+          0,
+          5
+        ]
+      },
+      {
+        "id": "AGENTS",
+        "label": "Three independent agents\nfrozen authorized observations",
+        "at": [
+          0,
+          4
+        ]
+      },
+      {
+        "id": "MARKET",
+        "label": "CollusionLab market engine\nprices, demand, gross profits",
+        "at": [
+          0,
+          3
+        ]
+      },
+      {
+        "id": "AUDIT",
+        "label": "Deterministic auditor\nno reward modification",
+        "at": [
+          0,
+          2
+        ]
+      },
+      {
+        "id": "ROUTE",
+        "label": "Composer and feedback router\nprivate/public/silent/placebo",
+        "at": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "INBOX",
+        "label": "Per-agent notice inbox\nfirst eligible next decision",
+        "at": [
+          0,
+          0
+        ]
+      },
+      {
+        "id": "CALLS",
+        "label": "Visible request/response records\nusage, attempts, failures",
+        "at": [
+          4.5,
+          4
+        ]
+      },
+      {
+        "id": "STORE",
+        "label": "Append-only events + commits\nsource snapshot and checksums",
+        "at": [
+          4.5,
+          3
+        ]
+      },
+      {
+        "id": "SCHEDULE",
+        "label": "Independent fixed schedule\nnot a live detection signal",
+        "at": [
+          4.5,
+          1
+        ]
+      },
+      {
+        "id": "ANALYSIS",
+        "label": "Offline integrity and analysis\nrun-level effects, uncertainty",
+        "at": [
+          4.5,
+          2
+        ]
+      }
+    ],
+    "edges": [
+      [
+        "CONFIG",
+        "RUN"
+      ],
+      [
+        "RUN",
+        "AGENTS"
+      ],
+      [
+        "AGENTS",
+        "MARKET"
+      ],
+      [
+        "MARKET",
+        "AUDIT"
+      ],
+      [
+        "AUDIT",
+        "ROUTE"
+      ],
+      [
+        "ROUTE",
+        "INBOX"
+      ],
+      [
+        "AGENTS",
+        "CALLS"
+      ],
+      [
+        "CALLS",
+        "STORE"
+      ],
+      [
+        "MARKET",
+        "STORE"
+      ],
+      [
+        "STORE",
+        "ANALYSIS"
+      ],
+      [
+        "SCHEDULE",
+        "ROUTE"
+      ],
+      [
+        "AUDIT",
+        "STORE"
+      ],
+      [
+        "ROUTE",
+        "STORE"
+      ]
+    ]
+  },
+  "02_round_pipeline": {
+    "title": "One round t - Feedback is first visible at t+1",
+    "size": [
+      9,
+      11
+    ],
+    "nodes": [
+      {
+        "id": "FREEZE",
+        "label": "1. Freeze all three observations\nusing completed history through t-1",
+        "at": [
+          0,
+          7
+        ]
+      },
+      {
+        "id": "DECIDE",
+        "label": "2. Record calls and collect prices\nno current-round rival disclosure",
+        "at": [
+          0,
+          6
+        ]
+      },
+      {
+        "id": "STEP",
+        "label": "3. Step the market once\ngross rewards = net rewards",
+        "at": [
+          0,
+          5
+        ]
+      },
+      {
+        "id": "AUDIT",
+        "label": "4. Audit the completed round\nupdate the consecutive-round window",
+        "at": [
+          0,
+          4
+        ]
+      },
+      {
+        "id": "ROUTE",
+        "label": "5. Compose and route notices\nrecord each recipient's disposition",
+        "at": [
+          0,
+          3
+        ]
+      },
+      {
+        "id": "COMMIT",
+        "label": "6. Save evidence and round commit\nretain failures and interruptions",
+        "at": [
+          0,
+          2
+        ]
+      },
+      {
+        "id": "NEXT",
+        "label": "7. Decision t+1 consumes\nonly its authorized pending notice",
+        "at": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "FINAL",
+        "label": "After the final round: verify\nand seal complete evidence",
+        "at": [
+          0,
+          0
+        ]
+      }
+    ],
+    "edges": [
+      [
+        "FREEZE",
+        "DECIDE"
+      ],
+      [
+        "DECIDE",
+        "STEP"
+      ],
+      [
+        "STEP",
+        "AUDIT"
+      ],
+      [
+        "AUDIT",
+        "ROUTE"
+      ],
+      [
+        "ROUTE",
+        "COMMIT"
+      ],
+      [
+        "COMMIT",
+        "NEXT"
+      ],
+      [
+        "NEXT",
+        "FINAL"
+      ]
+    ]
+  },
+  "03_v1_phases": {
+    "title": "V1 engineering phases and subsequent research gates",
+    "size": [
+      9,
+      11
+    ],
+    "nodes": [
+      {
+        "id": "P1",
+        "label": "P1 Foundation and preservation\nBR-001, BR-012",
+        "at": [
+          0,
+          7
+        ]
+      },
+      {
+        "id": "P2",
+        "label": "P2 Economics and agent integration\nBR-002, BR-006",
+        "at": [
+          0,
+          6
+        ]
+      },
+      {
+        "id": "P3",
+        "label": "P3 Auditor and feedback controls\nBR-003 to BR-005",
+        "at": [
+          0,
+          5
+        ]
+      },
+      {
+        "id": "P4",
+        "label": "P4 Evidence, failures, budgets\nBR-007 to BR-009",
+        "at": [
+          0,
+          4
+        ]
+      },
+      {
+        "id": "P5",
+        "label": "P5 Batches and run-level inference\nBR-010, BR-011",
+        "at": [
+          0,
+          3
+        ]
+      },
+      {
+        "id": "P6",
+        "label": "P6 Release and reproducible handoff\nBR-012, BR-013",
+        "at": [
+          0,
+          2
+        ]
+      },
+      {
+        "id": "PILOT",
+        "label": "Research: model pilot + freeze\nprovider/budget/power still to choose",
+        "at": [
+          0,
+          1
+        ]
+      },
+      {
+        "id": "RESEARCH",
+        "label": "Research: confirmatory experiments\nactual results and competition paper",
+        "at": [
+          0,
+          0
+        ]
+      }
+    ],
+    "edges": [
+      [
+        "P1",
+        "P2"
+      ],
+      [
+        "P2",
+        "P3"
+      ],
+      [
+        "P3",
+        "P4"
+      ],
+      [
+        "P4",
+        "P5"
+      ],
+      [
+        "P5",
+        "P6"
+      ],
+      [
+        "P6",
+        "PILOT"
+      ],
+      [
+        "PILOT",
+        "RESEARCH"
+      ]
+    ]
+  }
+}
