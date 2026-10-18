@@ -1,0 +1,33 @@
+schema_version: 1
+study_id: expanded-engineering-v11
+run_kind: smoke
+rounds: 12
+memory_window: 6
+analysis_last_rounds: 6
+primary_outcome: gross_profit
+batch_arms:
+  - silent
+  - private
+  - public
+  - placebo
+  - public_numeric
+  - public_fine
+  - private_fine
+agent:
+  backend: scripted
+  model: scripted
+  scripted_policy: coordinated
+auditor:
+  enabled: true
+  mode: market
+  window: 3
+  elevation_threshold: 0.25
+  maximum_spread: 2
+  cooldown_rounds: 2
+sanctions:
+  positive_profit_rate: 0.2
+feedback:
+  warning_source: live
+  schedule_rounds: [3, 6, 9]
+budget:
+  max_calls: 72
