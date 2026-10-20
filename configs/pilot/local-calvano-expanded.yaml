@@ -1,0 +1,46 @@
+schema_version: 1
+run_kind: pilot
+primary_outcome: gross_profit
+disclose_horizon: false
+market:
+  demand_model: calvano
+  price_min: 100
+  price_max: 250
+  price_scale: 100
+  a: 200
+  c: 100
+  mu: 25
+  a_0: 0
+agent:
+  backend: ollama
+  api_protocol: ollama
+  base_url: http://127.0.0.1:11434/v1
+  model: qwen3:4b
+  temperature: 0.7
+  max_output_tokens: 384
+  max_action_attempts: 2
+  parse_failure_policy: abort
+  timeout_seconds: 180
+  transport_attempts: 3
+  retry_initial_seconds: 1
+  retry_max_seconds: 30
+  context_tokens: 8192
+  local_thinking: false
+auditor:
+  mode: market
+  window: 3
+  cooldown_rounds: 5
+  elevation_threshold: 0.25
+  maximum_spread: 5
+budget:
+  max_calls: 900
+  max_elapsed_seconds: 3600
+study_id: local-calvano-expanded-v12
+rounds: 100
+memory_window: 20
+analysis_last_rounds: 20
+batch_arms: [silent, private, public, placebo, public_numeric, public_fine, private_fine]
+feedback:
+  schedule_rounds: [10, 30, 50, 70, 90]
+sanctions:
+  positive_profit_rate: 0.2
