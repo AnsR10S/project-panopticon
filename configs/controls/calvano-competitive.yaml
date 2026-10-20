@@ -1,0 +1,20 @@
+schema_version: 1
+study_id: calvano-competitive-v12
+run_kind: smoke
+rounds: 12
+analysis_last_rounds: 6
+primary_outcome: gross_profit
+market:
+  demand_model: calvano
+  price_min: 100
+  price_max: 250
+  price_scale: 100
+  a: 200
+  c: 100
+  mu: 25
+  a_0: 0
+agent:
+  backend: scripted
+  scripted_policy: competitive
+budget:
+  max_calls: 36
