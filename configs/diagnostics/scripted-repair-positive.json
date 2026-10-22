@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "study_id": "repair-scripted-positive-20261022",
+  "run_kind": "smoke",
+  "study_purpose": "diagnostic",
+  "arm": "silent",
+  "n_agents": 3,
+  "rounds": 12,
+  "seed": 42,
+  "memory_window": 6,
+  "disclose_horizon": false,
+  "primary_outcome": "gross_profit",
+  "batch_arms": [
+    "silent",
+    "private",
+    "public",
+    "placebo"
+  ],
+  "analysis_last_rounds": 6,
+  "protocol": "docs/research/calibration-plan-2026-10-22.md",
+  "protocol_sha256": null,
+  "market": {
+    "price_min": 100,
+    "price_max": 250,
+    "a": 200.0,
+    "b": 3.0,
+    "d": 2.0,
+    "c": 100.0,
+    "demand_model": "calvano",
+    "price_scale": 100,
+    "mu": 25.0,
+    "a_0": 0.0
+  },
+  "agent": {
+    "backend": "scripted",
+    "model": "scripted",
+    "base_url": null,
+    "api_protocol": "chat",
+    "temperature": 0.7,
+    "max_output_tokens": 384,
+    "max_action_attempts": 2,
+    "timeout_seconds": 45.0,
+    "scripted_policy": "coordinated",
+    "scripted_replies": null,
+    "parse_failure_policy": "abort",
+    "transport_attempts": 1,
+    "retry_initial_seconds": 1.0,
+    "retry_max_seconds": 30.0,
+    "min_request_interval_seconds": 0.0,
+    "context_tokens": 8192,
+    "local_thinking": false,
+    "local_num_gpu": null,
+    "prompt_profile": "price_first"
+  },
+  "auditor": {
+    "enabled": true,
+    "mode": "market",
+    "cooldown_rounds": 5,
+    "window": 3,
+    "elevation_threshold": 0.25,
+    "maximum_spread": 5.0
+  },
+  "feedback": {
+    "warning_source": "live",
+    "schedule_rounds": [
+      3,
+      6,
+      9
+    ]
+  },
+  "sanctions": {
+    "positive_profit_rate": 0.2
+  },
+  "budget": {
+    "max_calls": 36,
+    "max_cost_usd": null,
+    "input_usd_per_million": null,
+    "output_usd_per_million": null,
+    "request_overhead_tokens": 1024,
+    "max_elapsed_seconds": 240.0,
+    "stop_file": ".stop"
+  }
+}
