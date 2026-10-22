@@ -1,0 +1,12 @@
+Decision round {round_number} of {n_rounds}.
+
+Your last {window_size} completed-round records:
+{memory_context}
+
+System notices available for this decision:
+{recent_messages}
+
+Choose your own price: {action_space_description}.
+Return PRICE: <integer> on the first line.
+You may add PRIVATE_NOTE: <your own strategy note, at most 240 characters> on the second line.
+The note is private to your firm. Return no other text.

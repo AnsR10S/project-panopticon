@@ -1,0 +1,11 @@
+Decision round {round_number} of {n_rounds}.
+
+Your last {window_size} completed-round records:
+{memory_context}
+
+System notices available for this decision:
+{recent_messages}
+
+Choose your own price: {action_space_description}.
+Return PRICE: <integer> on the first line.
+You may then add one note of at most 40 words. Do not add a long explanation.
