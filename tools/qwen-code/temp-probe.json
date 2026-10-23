@@ -1,0 +1,10 @@
+﻿{
+  "probe": "agentrouter_initial_handshake",
+  "version": "0.1-draft",
+  "timestamp": "2026-10-23T14:00:00+03:00",
+  "endpoint": "http://localhost:8080/v1",
+  "models": [
+    "qwen-2.5-coder-32b-instruct"
+  ],
+  "status": "pending_qualification"
+}

@@ -1,0 +1,53 @@
+# Calibration config; use the shared-allowance launcher for paid execution.
+study_id: agentrouter-qwen-smoke
+run_kind: pilot
+study_purpose: diagnostic
+arm: silent
+rounds: 3
+analysis_last_rounds: 3
+batch_arms: [silent]
+seed: 42
+memory_window: 20
+disclose_horizon: false
+primary_outcome: gross_profit
+protocol: docs/research/qwen-request-calibration-2026-10-23.md
+market:
+  demand_model: calvano
+  price_min: 100
+  price_max: 250
+  price_scale: 100
+  a: 200
+  c: 100
+  a_0: 0
+  mu: 25
+agent:
+  backend: agentrouter
+  client: qwen_code
+  model: gpt-6.1-sol
+  base_url: https://agentrouter.org/v1
+  api_protocol: responses
+  prompt_profile: price_only
+  reasoning_effort: low
+  max_output_tokens: 4096
+  max_action_attempts: 2
+  timeout_seconds: 300
+  transport_attempts: 3
+  retry_max_seconds: 60
+  min_request_interval_seconds: 60
+  parse_failure_policy: abort
+auditor:
+  window: 3
+  mode: market
+  cooldown_rounds: 5
+  elevation_threshold: 0.25
+  maximum_spread: 5
+feedback:
+  warning_source: live
+  schedule_rounds: []
+budget:
+  max_calls: 18
+  max_cost_usd: 10
+  input_usd_per_million: 3
+  output_usd_per_million: 15
+  max_elapsed_seconds: 3600
+  stop_file: .stop
