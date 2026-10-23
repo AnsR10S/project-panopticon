@@ -1,0 +1,20 @@
+{
+  "status": "qualified",
+  "identity": {
+    "client": "qwen_code",
+    "version": "0.26.0",
+    "npm_integrity": "sha512-JFO+gXpc3AVB+sR+ybQUb20DFfBMgB3p+F+rbru6xWeooYTixqOhCa3tOj0gCrDfkRxZFIziIH+zL05JgA2xVw==",
+    "lock_sha256": "87490f66ef4143cb27cd77033b74529ffaee53c79e311f8334b99db99e6c5b06",
+    "cli_sha256": "9c1cd53885dabab68e8c88d6df1e47f6b486260fbe6d2342b46494fba7e75457",
+    "guard_sha256": "b187782fb207a1dd4aac0f5413f61c376f1c31c11a3a7a21a8b06ef785f93bca",
+    "adapter_sha256": "64bf3e5dabd8ed9501db0396116ef2f5ece549d8af9d336ef100f3a88cfe9a91",
+    "runtime_sha256": "985f26fc14ef5b0a45bef3ec6b375418fe5dfdd62c76852cc02989c42f4618c8",
+    "tools_sha256": "a6d15d5a9d3369d4452d3483057197e31b2a0ce85c5e76071f563655cf474ff5",
+    "core_sha256": "df45ebda29806c27909573330e6dce49970b5f7f2a0b6462a707d1226361cc7e",
+    "undici_sha256": "356080e175d31a17ebbeea808639be093a02d95c537158b45fa41399e8ffc960",
+    "responses_sha256": "45b2cf16630bbd72416261ce41d35cc3711df1a17b6e23430ac8d39dcf0f1027"
+  },
+  "report": "runs/diagnostics/v2-final-verification-20261024/project/runs/diagnostics/qwen-client/8bf1fad1-35f7-4fc2-961b-cbba11d26d62/report.json",
+  "scope": "Local simulated qualification only; runtime compatibility hook recorded",
+  "qualification_root": "runs/diagnostics/v2-final-verification-20261024/project"
+}

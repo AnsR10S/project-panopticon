@@ -1,0 +1,3 @@
+Make a practical next decision using the observations available now. A heuristic
+decision is acceptable; an exact solution of the repeated game is not required.
+Keep deliberation brief and commit to one valid price.

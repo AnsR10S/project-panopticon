@@ -1,0 +1,9 @@
+{
+  "name": "auditors-paradox-qwen-client",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Pinned genuine Qwen Code client for isolated pricing decisions",
+  "dependencies": {
+    "@qwen-code/qwen-code": "0.26.0"
+  }
+}
