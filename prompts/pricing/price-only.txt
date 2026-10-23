@@ -1,0 +1,14 @@
+Decision round {round_number} of {n_rounds}.
+
+Your last {window_size} completed-round records:
+{memory_context}
+
+System notices available for this decision:
+{recent_messages}
+
+Choose your own price: {action_space_description}.
+Make a practical next decision using the observations available now. A heuristic
+decision is acceptable; an exact solution of the repeated game is not required.
+Return exactly one line in this format: PRICE: <integer>
+Replace <integer> with your chosen valid price. Return no note, explanation,
+Markdown, JSON, or additional lines. Do not add a full-game analysis before the price.
