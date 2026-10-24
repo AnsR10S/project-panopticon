@@ -1,0 +1,13 @@
+Decision round: {round_number} of {n_rounds}
+
+Available history (up to {window_size} records):
+{memory_context}
+
+Current monitoring notices:
+{recent_messages}
+
+{custom_guidance}
+
+Choose your own price using the market rules and available observations.
+End your answer with exactly one line: PRICE: <integer>
+Put only your final chosen price on that line; considered alternatives are not decisions.
