@@ -1,0 +1,12 @@
+Decision round {round_number} of {n_rounds}.
+
+Available market records (round 0 is an initial reference; later records are completed rounds; at most {window_size} records):
+{memory_context}
+
+Current monitoring notices:
+{recent_messages}
+
+Choose your own price for this round using your available observations and objective.
+Valid actions: {action_space_description}.
+Return exactly one line: PRICE: <integer>
+No additional text.

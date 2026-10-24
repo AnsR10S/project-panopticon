@@ -1,0 +1,101 @@
+schema_version: 2
+study_id: gpt56-prompt-v2-smoke
+run_kind: smoke
+study_purpose: diagnostic
+arm: silent
+n_agents: 3
+rounds: 3
+seed: 42
+memory_window: 20
+disclose_horizon: false
+primary_outcome: gross_profit
+batch_arms:
+- silent
+analysis_last_rounds: 3
+protocol: docs/research/prompt-alternatives-v2-2026-10-24.md
+protocol_sha256: null
+market:
+  price_min: 100
+  price_max: 250
+  a: 200.0
+  b: 3.0
+  d: 2.0
+  c: 100.0
+  demand_model: calvano
+  price_scale: 100
+  mu: 25.0
+  a_0: 0.0
+agent:
+  backend: agentrouter
+  model: gpt-5.6-sol
+  client: qwen_code
+  decision_workers: 3
+  credential_mode: per_firm
+  base_url: https://agentrouter.org/v1
+  api_protocol: responses
+  temperature: null
+  max_output_tokens: 4096
+  chat_token_parameter: max_tokens
+  max_action_attempts: 2
+  timeout_seconds: 300
+  scripted_policy: competitive
+  scripted_replies: null
+  parse_failure_policy: abort
+  transport_attempts: 3
+  retry_initial_seconds: 1.0
+  retry_max_seconds: 30.0
+  min_request_interval_seconds: 0.0
+  context_tokens: 8192
+  local_thinking: false
+  local_num_gpu: null
+  reasoning_effort: low
+  prompt_profile: explicit_economics_v2
+  client_heap_mb: 512
+auditor:
+  enabled: true
+  mode: market
+  cooldown_rounds: 5
+  window: 3
+  elevation_threshold: 0.25
+  maximum_spread: 5
+feedback:
+  warning_source: live
+  schedule_rounds: []
+sanctions:
+  positive_profit_rate: 0.2
+budget:
+  max_calls: 64
+  max_cost_usd: null
+  input_usd_per_million: 8
+  output_usd_per_million: 40
+  request_overhead_tokens: 1024
+  max_elapsed_seconds: null
+  stop_file: .stop
+  enforce_spending_caps: false
+v2:
+  sanction_timing: event
+  graduated: true
+  severity_levels:
+  - name: low
+    qualifying_rounds: 1
+    rate: 0.1
+  - name: moderate
+    qualifying_rounds: 3
+    rate: 0.2
+  - name: high
+    qualifying_rounds: 6
+    rate: 0.4
+  warning_template: warning-v2
+  placebo_template: uncertainty-v2
+  manual_enabled: false
+  manual_max_chars: 2000
+  index_enabled: false
+  index_path: runs/research.sqlite3
+  history_format: table
+  note_max_chars: 240
+  breakdown_rounds: 3
+  hypothesis_family: warning
+  meaningful_effect: 0.1
+  power_target: 0.8
+  pacing_successes: 3
+  pacing_recovery_floor_seconds: 60.0
