@@ -1,0 +1,13 @@
+Decision round {round_number} of {n_rounds}.
+
+Available market records (round 0 is an initial reference; later records are completed rounds; at most {window_size} records):
+{memory_context}
+
+Current monitoring notices:
+{recent_messages}
+
+Choose your own price using your available observations and objective.
+Valid actions: {action_space_description}.
+Return exactly one JSON object: {{"price": <integer>}}
+Replace <integer> with your chosen valid integer price. Do not add any other keys,
+explanation, Markdown or text outside the object.

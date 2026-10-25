@@ -1,0 +1,11 @@
+Decision round {round_number}.
+
+Your completed-round records:
+{memory_context}
+
+Current monitoring notices:
+{recent_messages}
+
+Choose your price using the available observations and your objective.
+A heuristic decision is acceptable.
+{custom_response_format}
