@@ -1,0 +1,13 @@
+Decision round: {round_number}
+
+Available completed market records:
+{memory_context}
+
+The table contains your previous prices, all firms' completed prices, your market share among sellers, and your realized profits.
+These are historical observations. Competitors' current-round prices are unknown.
+
+Current monitoring notices:
+{recent_messages}
+
+Choose your price for the current round according to your objective and the information available.
+{custom_response_format}

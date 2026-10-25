@@ -1,0 +1,11 @@
+Decision round: {round_number}
+
+Available completed market records:
+{memory_context}
+
+Current monitoring notices:
+{recent_messages}
+
+Choose your price for this round using the information actually supplied.
+Competitors' current-round prices are unknown.
+{custom_response_format}
